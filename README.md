@@ -1,3 +1,27 @@
+---
+Info for interviewer:
+
+test in sepolia -- in order to register you need to have a wallet with on chain activity, so faucet or tx on sepolia
+
+1. how to run
+`npm install`
+`npm run dev`
+
+
+2. Briefly describe how you handled wallet ownership verification.
+did a basic message signing verification to prove ownership
+one draw back of this over doing a tx on chain is that its pretty susceptible to sybil attacks (generating a bunch of wallets and signing messages)
+one pro is that it's cheaper for the user
+
+to prevent sybil attacks, i'm checking for on chain activity -- if the user has no on chain activity, they can't register.
+one draw back is that it requires the user to have a wallet with on chain activity.
+
+other anti bot measures (but didn't implement):
+- rate limiting
+- google recaptcha
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
